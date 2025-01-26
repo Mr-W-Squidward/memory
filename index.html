@@ -3,12 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Card Game</title>
   <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
 </head>
 <body>
-  <h1>Memory Card Game</h1>
-  <div class="game-board" id="game-board"></div>
+  <div id="start-screen">
+    <h1>Memory Game</h1>
+    <p>Select Difficulty:</p>
+    <button onclick="selectDifficulty('easy')">Easy</button>
+    <button onclick="selectDifficulty('medium')">Medium</button>
+    <button onclick="selectDifficulty('hard')">Hard</button>
+    <p>Select Theme:</p>
+    <button onclick="changeTheme('food')">Food</button>
+    <button onclick="changeTheme('animals')">Animals</button>
+    <button id="start-game-btn" onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="game-container" style="display: none;">
+    <div id="stats">
+      <p id="timer">Time: 0s</p>
+      <p id="moves">Moves: 0</p>
+    </div>
+    <div id="game-board"></div>
+  </div>
+
+  <div id="leaderboard" style="display: none;">
+    <h2>Leaderboard</h2>
+    <ul id="leaderboard-list"></ul>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

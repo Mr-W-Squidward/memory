@@ -1,36 +1,33 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #a8254c;
+  background-color: #282c34;
+  color: white;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  margin-top: 2rem;
-  color: #000000;
+  font-size: 2.5rem;
+  margin: 20px 0;
 }
 
-.game-board {
+#game-board {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-gap: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: center;
-  margin: 20px auto;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .card {
+  position: relative;
   width: 100px;
   height: 100px;
-  background-color: #49050e;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .card-inner {
@@ -45,24 +42,81 @@ h1 {
   transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 10px;
-}
-
-.card-front {
-  background-color: #311253;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: black;
+  border-radius: 8px;
+}
+
+.card-front {
+  background-color: #f4a261;
+  transform: rotateY(180deg);
 }
 
 .card-back {
-  background-color: #49050e;
-  transform: rotateY(180deg);
+  background-color: #264653;
+  color: white;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 10px;
+  background-color: #2a9d8f;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #e76f51;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d35d3b;
+}
+
+#leaderboard {
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#start-screen p {
+  margin: 10px 0;
+}
+
+#start-game-btn {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  background-color: #2a9d8f;
+}
+
+#start-game-btn:hover {
+  background-color: #21867a;
 }
